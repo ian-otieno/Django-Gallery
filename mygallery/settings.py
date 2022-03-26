@@ -10,6 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import os
+#import django_on_heroku
+#import dj_database_url
+from decouple import config, Csv
+from pathlib import Path
+
+
+MODE=config("MODE",default="dev")
+SECRET_KEY=config('SECRET_KEY')
+DEBUG=config('DEBUG',default=False, cast=bool)
+
+cloudinary.config( 
+  cloud_name = "iainoo", 
+  api_key = "166495192544533", 
+  api_secret = "1G7wj0mGvv5W8yw9JaOeFZkEUPE" 
+)
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
