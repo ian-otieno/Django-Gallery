@@ -1,0 +1,29 @@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% extends 'all-gallery/base.html' %}
+
+{% block content %}
+{{block.super}}
+
+<div class="container-fluid" style="background-color: #003049; margin-top: 0px;">
+    <div class="container">
+        <h1 class="text-center">Welcome to my Galleries</h1>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+                <div class="card-columns">
+                    {% for image in images %}
+                    <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
+                            style="height: 300px; width: 400px;margin: auto;margin-bottom: 10px;"></a>
+    
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+
+</div>
+
+{% endblock %}
