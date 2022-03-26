@@ -90,3 +90,18 @@ def test_update_image(self):
         self.new_image.save_image()
         self.assertTrue(image_changed,Images)
 
+def test_get_image_by_id(self):
+        image= self.new_image.get_image_by_id(self.new_image.id)
+        images = Images.objects.filter(id=self.new_image.id)
+        self.assertTrue(image, images)
+
+def test_search_image_by_location(self):
+        self.new_image.save_image()
+        found_images = self.new_image.get_images_by_location(location='nairobi')
+        self.assertTrue(len(found_images) == 1)
+
+def test_get_image_by_category(self):
+        category = 'food'
+        images= self.new_image.search_image_by_category(category)
+        self.assertTrue(len(images)==1)
+         
