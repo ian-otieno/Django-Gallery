@@ -65,3 +65,28 @@ class ImageTestCase(TestCase):
 
         self.new_image = Images(image_name='leopard',image_description='lives in game park', location=self.nairobi, category=self.travel)
         self.new_image.save()
+def test_instance(self):
+        self.assertTrue(isinstance(self.new_image, Images))
+
+def tearDown(self):
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Images.objects.all().delete()
+
+def test_save_images(self):
+        self.new_image.save_image()
+        images = Images.objects.all()
+        self.assertTrue(len(images)>0)
+def test_delete_images(self):
+        self.new_image.save_image()
+        images = Images.objects.all()
+        self.new_image.delete_image()
+        self.assertTrue(len(images)==0)
+
+def test_update_image(self):
+        self.new_image.save_image()
+        self.new_image.update_image(self.new_image.id, 'photos/test.jpg')
+        image_changed = Images.objects.filter(image_name='photo/test.jpg')
+        self.new_image.save_image()
+        self.assertTrue(image_changed,Images)
+
