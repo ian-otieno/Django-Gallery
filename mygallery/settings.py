@@ -42,6 +42,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'gallery.apps.GalleryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-
+    'bootstrap4', 
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'mygallery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ "/home/moringa/Documents/Django-gallery/gallery/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
