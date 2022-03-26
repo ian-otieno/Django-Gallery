@@ -14,15 +14,6 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
-#import django_on_heroku
-#import dj_database_url
-from decouple import config, Csv
-from pathlib import Path
-
-
-MODE=config("MODE",default="dev")
-SECRET_KEY=config('SECRET_KEY')
-DEBUG=config('DEBUG',default=False, cast=bool)
 
 cloudinary.config( 
   cloud_name = "iainoo", 
@@ -57,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+
 ]
 
 MIDDLEWARE = [
@@ -95,8 +88,12 @@ WSGI_APPLICATION = 'mygallery.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gallery',
+        'USER': 'moringa',
+        'PASSWORD': 'moringa',
+
+
     }
 }
 
