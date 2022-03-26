@@ -43,6 +43,3 @@ def get_images_by_location(request,location):
     location_images = Images.get_images_by_location(location)
     return render(request,'all-gallery/location.html',{'location_images':location_images})
 
-
-
-    

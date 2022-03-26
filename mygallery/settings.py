@@ -68,7 +68,7 @@ ROOT_URLCONF = 'mygallery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ "/home/moringa/Documents/Django-gallery/gallery/templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
