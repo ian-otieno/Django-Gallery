@@ -1,8 +1,6 @@
-
 from django.db import models
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 # Create your models here.
 class Photographer(models.Model):
     first_name = models.CharField(max_length=30)
