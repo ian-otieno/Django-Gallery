@@ -14,6 +14,11 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
+import django_on_heroku
+import dj_database_url
+from decouple import config, Csv
+from pathlib import Path
+
 
 cloudinary.config( 
   cloud_name = "iainoo", 
@@ -138,3 +143,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
