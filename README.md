@@ -1,11 +1,14 @@
 # Django-Gallery
 This Python/Django gallery website was created on the 27/03/2022
 
-## Description
- This is a django gallery application where users can upload their photos and store according to different locations taken and different category
- 
  ## Author
 ## By **[IAN OTIENO](https://github.com/ian-otieno)**
+
+## Description
+ This is a django gallery application where users can upload their photos and store according to different locations taken and different category
+
+## Live Demo
+Click on the link below to view the site;https://iainogallery.herokuapp.com/
 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user and writer.
